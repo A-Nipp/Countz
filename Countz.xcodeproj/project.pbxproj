@@ -13,6 +13,8 @@
 		1630E8A8278E486000097602 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630E896278E485F00097602 /* ContentView.swift */; };
 		1630E8A9278E486000097602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1630E897278E486000097602 /* Assets.xcassets */; };
 		1630E8AA278E486000097602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1630E897278E486000097602 /* Assets.xcassets */; };
+		16B672D1278F75D30083C4A2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B672D0278F75D30083C4A2 /* SettingsView.swift */; };
+		16B672D2278F75D30083C4A2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B672D0278F75D30083C4A2 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		1630E89C278E486000097602 /* Countz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630E8A2278E486000097602 /* Countz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630E8A4278E486000097602 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		16B672D0278F75D30083C4A2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			children = (
 				1630E895278E485F00097602 /* CountzApp.swift */,
 				1630E896278E485F00097602 /* ContentView.swift */,
+				16B672D0278F75D30083C4A2 /* SettingsView.swift */,
 				1630E897278E486000097602 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -176,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B672D1278F75D30083C4A2 /* SettingsView.swift in Sources */,
 				1630E8A7278E486000097602 /* ContentView.swift in Sources */,
 				1630E8A5278E486000097602 /* CountzApp.swift in Sources */,
 			);
@@ -185,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B672D2278F75D30083C4A2 /* SettingsView.swift in Sources */,
 				1630E8A8278E486000097602 /* ContentView.swift in Sources */,
 				1630E8A6278E486000097602 /* CountzApp.swift in Sources */,
 			);

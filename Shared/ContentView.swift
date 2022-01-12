@@ -9,35 +9,65 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var count = 0
-    let max = 10
+    @State private var max = 10
     var progress: Double {
         Double(count) / Double(max)
     }
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [.blue, .white], startPoint: .top, endPoint: .bottom)
+                LinearGradient(colors: [.blue, .white], startPoint: .bottom, endPoint: .top)
                     .ignoresSafeArea()
-                LinearGradient(colors: [.red,.white], startPoint: .top, endPoint: .bottom)
+                LinearGradient(colors: [.red,.white], startPoint: .bottom, endPoint: .top)
                     .opacity(progress)
                     .ignoresSafeArea()
                 VStack {
-                    Text("\(count)")
-                        .font(.largeTitle)
+                    HStack {
+                        Text("Count: \(count)")
+                            .font(.largeTitle)
+                        Spacer()
+                        NavigationLink(destination: SettingsView(max: $max)) {
+                            Image(systemName: "gear")
+                                .font(.system(size: 30))
+            
+                        }
+                    }
                     Spacer()
                     HStack{
-                        Button(action: { count -= 1}, label: { Image(systemName: "minus")})
-                        Spacer()
-                        Button(action: { count += 1}, label: { Image(systemName: "plus")})
+                        Button(action: {
+                            if count > -1 {
+                                count -= 1
+                            }
+                            
+                        }, label: { ButtonLabel(imageNameString: "minus")})
+                        Button(action: {
+                            if count < max {
+                                count += 1
+                            }
+                            
+                        }, label: { ButtonLabel(imageNameString: "plus")})
                     }
                     .padding()
                 }
                 .padding()
-                .navigationTitle("Countz")
-                //.navigationBarHidden(true)
+                .navigationBarHidden(true)
                 
                 
             }
+        }
+    }
+}
+
+struct ButtonLabel: View {
+    let imageNameString: String
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .frame(minWidth: 100, idealWidth: 150, maxWidth: 100, minHeight: 100, idealHeight: 150, maxHeight: 200)
+                .foregroundColor(.gray)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            Image(systemName: imageNameString)
+                .font(.system(size: 70))
         }
     }
 }
