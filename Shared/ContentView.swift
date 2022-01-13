@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var count = 0
     @State private var max = 10
+    @State private var isShowingAlert = false
     var progress: Double {
         Double(count) / Double(max)
     }
@@ -35,11 +36,17 @@ struct ContentView: View {
                     Spacer()
                     HStack{
                         Button(action: {
-                            if count > -1 {
+                            if count == 0 {
+                                isShowingAlert = true
+                            }
+                            if count > 0 {
                                 count -= 1
                             }
                             
                         }, label: { ButtonLabel(imageNameString: "minus")})
+                            .alert("You can't have fewer than 0 people!", isPresented: $isShowingAlert) {
+                                Button("Dismiss", role: .cancel, action: {})
+                            }
                         Button(action: {
                             if count < max {
                                 count += 1
